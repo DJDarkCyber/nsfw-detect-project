@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Hell Image Hosting | Home
+        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <!--
+        Including all CSS Files
+    -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cssFiles/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <!--
+        End of the Including CSS Files
+    -->
+
+    <!--
+        Including all JS Files
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--
+        End of the Including JS Files
+    -->
+
+    <script>
+        $(function(){
+            new WOW().init(); 
+        });
+    </script>
+
+<body>
+    <header class="headerMain container-fluid ">
+        <div class="headerContent">
+            <a href="{{ url_for('main') }}" style="width: 60px; height: 80px"><img src="{{ url_for('static', filename='imgs/5b59a2ed7b249d8695eb332bc49afe8a.png') }}" alt="" width="60px" height="80px" style="margin-left: 40px;"></a>
+            <div class="headerLinksContent">
+                <div class="eachLinkCont">
+                    <a href="http://libraryfyuybp7oyidyya3ah5xvwgyx6weauoini7zyz555litmmumad.onion" target="_blank" class="headerLinks">Underground</a>
+                </div>
+                <div class="eachLinkCont">
+                    <a href="https://crazyshit.com/" target="_blank" class="headerLinks">Worthy Site</a>
+                </div>
+                <div class="eachLinkCont">
+                    <a href="https://github.com/DJDarkCyber" target="_blank" class="headerLinks">About Us</a>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    <div class="mainContBox">
+        <div class="imageUploadDisplay">
+            <div class="imageUploadHeader">
+                <h3>Upload Image</h3>
+            </div>
+            <div class="imageUploadContent">
+                <div class="imageUploadDispCont">
+                    {% if error==1 %} 
+                    <div class="errorMessage">
+
+                        Error In Uploading Image!!
+                    </div>
+                    {% endif %}
+                    <article>
+                        <ul>
+                            <li>Image Must Have Sensitive Content.</li>
+                            <li>Image Must Have Nudity.</li>
+                            <li>Image Can Be More Violent.</li>
+                            <li>Image Should Be Likeable by Lucifer.</li>
+                        </ul>
+                    </article>
+                    <form action="{{ url_for('uploadImage') }}" method="post" style="margin-top: 90px" class="imageUploadForm" enctype="multipart/form-data">
+                        <div class="imageUploadInputDesc">
+                            Provide Image Title
+                        </div>
+                        <input type="text" class="imageUploadInputs" name="IMGTITLE" style="width: 230px; margin-top: 20px;" maxlength="60" required>
+                        <br>
+                        <input type="file" name="IMAGE" class="" style="margin-top: 40px;" required>
+                        <input type="submit" class="" style="width: 120px; margin-top: 40px;">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
